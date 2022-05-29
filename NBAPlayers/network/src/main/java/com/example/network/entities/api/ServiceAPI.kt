@@ -6,5 +6,5 @@ import retrofit2.http.GET
 
 interface ServiceAPI {
     @GET("players")
-    fun getPlayers(): Call<PlayersDTO>
+    fun getPlayers(): Call<List<PlayersDTO.Data>>
 }

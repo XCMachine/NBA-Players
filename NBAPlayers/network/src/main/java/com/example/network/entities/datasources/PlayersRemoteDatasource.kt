@@ -15,21 +15,23 @@ class PlayersRemoteDatasource(
         callback: DataCallback
     ) {
         val callPlayers = serviceAPI.getPlayers()
-        callPlayers.enqueue(object : Callback<PlayersDTO> {
-            override fun onResponse(call: Call<PlayersDTO>, response: Response<PlayersDTO>) {
+        callPlayers.enqueue(object : Callback<List<PlayersDTO.Data>> {
+            override fun onResponse(
+                call: Call<List<PlayersDTO.Data>>,
+                response: Response<List<PlayersDTO.Data>>
+            ) {
                 response.body()?.run {
                     callback.onDataReady(this)
                 }
             }
 
-            override fun onFailure(call: Call<PlayersDTO>, t: Throwable) {
+            override fun onFailure(call: Call<List<PlayersDTO.Data>>, t: Throwable) {
                 Log.e("Error", t.localizedMessage!!)
             }
-
         })
     }
 
     interface DataCallback {
-        fun onDataReady(data: PlayersDTO)
+        fun onDataReady(data: List<PlayersDTO.Data>)
     }
 }
