@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import com.example.nbaplayers.R
 import com.example.nbaplayers.databinding.FragmentPlayersBinding
 import com.example.nbaplayers.viewmodels.PlayersViewModel
 
@@ -34,7 +35,8 @@ class PlayersFragment : Fragment() {
 
         //ViewModel observation
         playersViewModel.playersDTO.observe(viewLifecycleOwner) {
-            playersViewModel.getPlayersDataRequest()
+            //This does not work and will be remade in the next branch
+            //playersViewModel.getPlayersDataRequest()
         }
     }
 }

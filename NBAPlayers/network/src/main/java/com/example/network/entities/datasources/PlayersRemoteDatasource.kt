@@ -12,9 +12,10 @@ class PlayersRemoteDatasource(
     private val serviceAPI: ServiceAPI = Retrofit().getInstance().create(ServiceAPI::class.java)
 ) {
     fun getPlayersData(
-        callback: DataCallback
+        callback: DataCallback,
+        id: Int
     ) {
-        val callPlayers = serviceAPI.getPlayers()
+        val callPlayers = serviceAPI.getPlayers(id)
         callPlayers.enqueue(object : Callback<List<PlayersDTO.Data>> {
             override fun onResponse(
                 call: Call<List<PlayersDTO.Data>>,
