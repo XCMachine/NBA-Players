@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">NBAPlayers</string>
+    <string name="players">Players</string>
+    <string name="about">About</string>
+    <string name="hello_about_fragment">Hello About Fragment</string>
+    <string name="hello_players_fragment">Hello Players Fragment</string>
 </resources>
