@@ -2,12 +2,10 @@ package com.example.nbaplayers
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
-import androidx.navigation.ui.setupWithNavController
 import com.example.nbaplayers.databinding.ActivityMainBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.example.nbaplayers.fragments.AboutFragment
+import com.example.nbaplayers.fragments.PlayersFragment
 
 class MainActivity : AppCompatActivity() {
 
