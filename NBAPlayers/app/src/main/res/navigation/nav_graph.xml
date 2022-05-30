@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/playersFragment"
-        android:name="com.example.nbaplayers.PlayersFragment"
+        android:name="com.example.nbaplayers.fragments.PlayersFragment"
         android:label="fragment_players"
         tools:layout="@layout/fragment_players" />
     <fragment
         android:id="@+id/aboutFragment"
-        android:name="com.example.nbaplayers.AboutFragment"
+        android:name="com.example.nbaplayers.fragments.AboutFragment"
         android:label="fragment_about"
         tools:layout="@layout/fragment_about" />
 </navigation>
