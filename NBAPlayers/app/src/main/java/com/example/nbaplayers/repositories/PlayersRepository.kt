@@ -12,7 +12,8 @@ object PlayersRepository {
     private var latestPlayersData: List<PlayersDTO.Data> = listOf()
 
     fun getPlayersData(
-        mutableLiveData: MutableLiveData<List<PlayersDTO.Data>>
+        mutableLiveData: MutableLiveData<List<PlayersDTO.Data>>,
+        id: Int
     ) {
         // Check if there is cache data, so it can be carried to the UI, if not to get from the server and override it, before sending it.
         if (latestPlayersData != emptyList<PlayersDTO.Data>()) {
@@ -24,7 +25,7 @@ object PlayersRepository {
                     mutableLiveData.value = latestPlayersData
                 }
 
-            })
+            }, id)
         }
     }
 }
