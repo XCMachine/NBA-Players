@@ -6,8 +6,11 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface ServiceAPI {
+    @GET("players")
+    fun getPlayers(): Call<PlayersDTO>
+
     @GET("players/{id}")
-    fun getPlayers(
+    fun getPlayersId(
         @Path("id") id: Int
-    ): Call<List<PlayersDTO.Data>>
+    ): Call<PlayersDTO>
 }

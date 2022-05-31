@@ -12,22 +12,18 @@ class PlayersRemoteDatasource(
     private val serviceAPI: ServiceAPI = Retrofit().getInstance().create(ServiceAPI::class.java)
 ) {
     fun getPlayersData(
-        callback: DataCallback,
-        id: Int
+        callback: DataCallback
     ) {
-        val callPlayers = serviceAPI.getPlayers(id)
-        callPlayers.enqueue(object : Callback<List<PlayersDTO.Data>> {
-            override fun onResponse(
-                call: Call<List<PlayersDTO.Data>>,
-                response: Response<List<PlayersDTO.Data>>
-            ) {
+        val callPlayers = serviceAPI.getPlayers()
+        callPlayers.enqueue(object : Callback<PlayersDTO> {
+            override fun onResponse(call: Call<PlayersDTO>, response: Response<PlayersDTO>) {
                 response.body()?.run {
-                    callback.onDataReady(this)
+                    callback.onDataReady(this.data)
                 }
             }
 
-            override fun onFailure(call: Call<List<PlayersDTO.Data>>, t: Throwable) {
-                Log.e("Error", t.localizedMessage!!)
+            override fun onFailure(call: Call<PlayersDTO>, t: Throwable) {
+                Log.e("Call Error", t.localizedMessage!!)
             }
         })
     }

@@ -12,9 +12,7 @@ class PlayersViewModel(
     private val _playersData = MutableLiveData<List<PlayersDTO.Data>>()
     val playersDTO: LiveData<List<PlayersDTO.Data>> = _playersData
 
-    fun getPlayersDataRequest(
-        id: Int
-    ) {
-        playersRepository.getPlayersData(_playersData, id)
+    fun getPlayersDataRequest() {
+        playersRepository.getPlayersData(_playersData)
     }
 }
