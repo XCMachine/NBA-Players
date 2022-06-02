@@ -36,7 +36,8 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
         private var titleText: TextView = itemView.findViewById(R.id.title)
 
         fun bind(data: PlayersDTO.Data) {
-            //This will be empty for now
+            //This will invoke as a virtual method on a null object, that's why it's commented
+            //titleText.text = data.ikeAnigbogu.firstName
         }
 
         init {
