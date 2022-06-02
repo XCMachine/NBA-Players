@@ -2,8 +2,9 @@
     <string name="app_name">NBAPlayers</string>
     <string name="players">Players</string>
     <string name="about">About</string>
-    <string name="hello_about_fragment">Hello About Fragment</string>
+    <string name="hello_about_fragment">version_name_here</string>
     <string name="hello_players_fragment">Hello Players Fragment</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title">title</string>
+    <string name="version">Version:</string>
 </resources>
